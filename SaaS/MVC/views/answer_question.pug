@@ -1,0 +1,41 @@
+html 
+    head 
+        title Answer a question
+        link(rel='stylesheet' href='/css/style.css')
+    body 
+        div.container
+            ul.col-md-12.row
+                a(href='http://localhost:3000/api/landing_page')
+                    li.col-md-2 HomePage
+                a(href='http://localhost:3000/api/myPage')
+                    li.col-md-2 My Page
+                a(href="http://localhost:3000/api/login")
+                    li.col-md-2 Login
+                a(href='http://localhost:3000/api/logout')
+                    li.col-md-2.col-md-offset-1 Logout
+                a(href='http://localhost:3000/api/signup')
+                    li.col-md-2 Register
+        form(method='POST' action='AddAnswerOfQuestion' )
+            h1(style="padding: 30px 0px 10px 5%; color:midnightblue; font-weight:700") Available Answers
+            table(style="width: 90%; margin-left:5%")
+                tr 
+                    th(class="table-headers") Answer text 
+                    th(class="table-headers") Answer date 
+                for answer, i in answers.result
+                    if (i % 2)
+                        tr(style="background-color:LightCyan")
+                            th(class="table-content") #{answer.text}
+                            th(class="table-content") #{answer.date_answered}
+                    else
+                        tr(style="background-color:beige")
+                            th(class="table-content") #{answer.text}
+                            th(class="table-content") #{answer.date_answered}
+            h3(style="margin-top:30px; margin-left: 50px;font-weight:600; color:midnightblue") Related Keywords
+            p(style="margin-top:10px; margin-left: 5%") #{keywords}
+
+            h3(style="margin-top:30px; margin-left: 50px;font-weight:600; color:midnightblue") Your answer here
+            textarea(name='text', value='', style="margin-left: 5%; width:90%; resize:none" rows=5)
+            br 
+            br
+            div(style="display:flex; justify-content:center; align-items:center; width:100%")
+                button(class='btn btn-primary btn-block' style="width:20%; padding:10px 0px; font-size:18px" type="submit") Answer

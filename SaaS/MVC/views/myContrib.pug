@@ -1,0 +1,43 @@
+html 
+    head
+        title='My questions - My answers'
+        link(rel='stylesheet' href='/css/style.css')
+    body
+        div.container
+            ul.col-md-12.row
+                a(href='http://localhost:3000/api/landing_page')
+                    li.col-md-2 HomePage
+                a(href='http://localhost:3000/api/myPage')
+                    li.col-md-2 My Page
+                a(href='http://localhost:3000/api/logout')
+                    li.col-md-2.col-md-offset-1 Logout
+
+        h2(style="padding: 30px 0px 10px 5%; color:midnightblue; font-weight:700") My Questions
+        table(style="width: 90%; margin-left:5%")
+            tr 
+                th(class="table-headers") Question title 
+                th(class="table-headers") Question text 
+            for question in questions 
+                if (i % 2)
+                    tr(style="background-color:LightCyan")
+                        th(class="table-content") #{question.title}
+                        th(class="table-content") #{question.text}
+                else
+                    tr(style="background-color:beige")
+                        th(class="table-content") #{question.title}
+                        th(class="table-content") #{question.text}
+                
+        h2(style="padding: 30px 0px 10px 5%; color:midnightblue; font-weight:700") My Answers
+        table(style="width: 90%; margin-left:5%")
+            tr 
+                th(class="table-headers") Answer text 
+                th(class="table-headers") Answer date 
+            for answer in answers 
+                if (i % 2)
+                    tr(style="background-color:LightCyan")
+                        th(class="table-content") #{answer.text}
+                        th(class="table-content") #{answer.date_answered}
+                else
+                    tr(style="background-color:beige")
+                        th(class="table-content") #{answer.text}
+                        th(class="table-content") #{answer.date_answered}

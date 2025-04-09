@@ -1,0 +1,25 @@
+html
+    head
+        link(rel='stylesheet' href='/css/style.css')
+        title Login
+
+    body
+        div.container
+            ul.col-md-12.row
+                a(href='http://localhost:3000/api/landing_page')
+                    li.col-md-2 HomePage
+                a(href='http://localhost:3000/api/signup')
+                    li.col-md-2 Register
+                a(href='http://localhost:3000/api/myPage')
+                    li.col-md-2 My Page
+        div(class='auth-wrapper')
+            form(class='auth-inner' method='POST' action='/auth/signin')
+                h2(class="headers") Login 
+                div(class="form-group")
+                    label(class="labels") Username:
+                    input(name="username", value='', type='text', class="form-control")
+                    label(class="labels") Password:
+                    input(name="password", value='', type='password', class="form-control")
+                
+                div(style="display:flex; justify-content:center; align-items:center; width:100%")
+                    button(class='registerbtn' style="width:200px; padding:10px 0px; font-size:18px" type="submit" value="Login") Login

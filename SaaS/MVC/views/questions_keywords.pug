@@ -1,0 +1,63 @@
+html 
+    head
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js")
+        p <link rel=stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")/>
+        title='Questions per keyword'
+    body
+        div.container
+            ul.col-md-12.row
+                a(href='http://localhost:3000/api/landing_page')
+                    li.col-md-2 HomePage
+                a(href='http://localhost:3000/api/myPage')
+                    li.col-md-2 My Page
+                a(href="http://localhost:3000/api/login")
+                    li.col-md-2 Login
+                a(href='http://localhost:3000/api/logout')
+                    li.col-md-2.col-md-offset-1 Logout
+                a(href='http://localhost:3000/api/signup')
+                    li.col-md-2 Register
+
+
+        div.container
+            canvas#chart(style='width:70%; margin-left: 150px; margin-top: 150px')
+
+
+        script.
+
+            /* NEED TO FIX LAYOUT AND INTRODUCE COLORS */
+            let myChart = document.getElementById("chart").getContext('2d');
+
+            let x = !{pie.labels}
+            //console.log(x);
+            let colors=[]
+            for (let i in x) {
+                console.log(i);
+                let x = parseInt(i);
+                let increment=parseInt(i)/10;
+                increment +=0.2;
+                console.log(increment);
+                let firstVal = 20*x;
+                let color='rgba('+firstVal+','+increment+',0,'+increment+')';
+                colors.push(color);
+                //console.log(i);
+            }
+            console.log(colors);
+            //labels:['Boston','Worcester','Springfield'],
+            let QPKChart = new Chart(myChart,{
+                type:'doughnut',
+                data:{
+                    labels:!{pie.labels},
+                    datasets:[{
+                        backgroundColor: colors,
+                        label:'Questions Per Keyword',
+                        data:#{JSON.stringify(pie.values)}
+                    }]
+                },
+                options:{}
+            })
+
+
+
+
+
+        

@@ -1,0 +1,54 @@
+html 
+    head
+        title='Questions per period'
+        link(rel='stylesheet' href='/css/style.css')
+    body
+        div.container
+            ul.col-md-12.row
+                a(href='http://localhost:3000/api/landing_page')
+                    li.col-md-2 HomePage
+                a(href='http://localhost:3000/api/myPage')
+                    li.col-md-2 My Page
+                a(href="http://localhost:3000/api/login")
+                    li.col-md-2 Login
+                a(href='http://localhost:3000/api/logout')
+                    li.col-md-2.col-md-offset-1 Logout
+                a(href='http://localhost:3000/api/signup')
+                    li.col-md-2 Register
+        h2(style="padding: 30px 0px 10px 5%; color:midnightblue; font-weight:700") Questions of the last week
+        table(style="width: 90%; margin-left:5%")
+            tr 
+                th(class="table-headers") Question title  
+                th(class="table-headers") Question text 
+                th(class="table-headers") Question date
+            if (questionsW)
+                for question,i in questionsW
+                    if (i % 2)
+                        tr(style="background-color:LightCyan")
+                            th(class="table-content") #{question.title}
+                            th(class="table-content") #{question.text}
+                            th(class="table-content") #{question.date_asked}
+                    else
+                        tr(style="background-color:beige")
+                            th(class="table-content") #{question.title}
+                            th(class="table-content") #{question.text}
+                            th(class="table-content") #{question.date_asked}
+
+        h2(style="padding: 30px 0px 10px 5%; color:midnightblue; font-weight:700") Questions of Last Month
+        table(style="width: 90%; margin-left:5%")
+            tr 
+                th(class="table-headers") Question title  
+                th(class="table-headers") Question text 
+                th(class="table-headers") Question date
+            if (questionsM)
+                for question,i in questionsM
+                    if (i % 2)
+                        tr(style="background-color:LightCyan")
+                            th(class="table-content") #{question.title}
+                            th(class="table-content") #{question.text}
+                            th(class="table-content") #{question.date_asked}
+                    else
+                        tr(style="background-color:beige")
+                            th(class="table-content") #{question.title}
+                            th(class="table-content") #{question.text}
+                            th(class="table-content") #{question.date_asked}

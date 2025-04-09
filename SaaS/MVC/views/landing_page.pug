@@ -1,0 +1,35 @@
+html
+    head
+        title="Landing Page"
+        link(rel='stylesheet' href='/css/style.css')
+    body
+        div.container
+            ul.col-md-12.row
+                a(href='http://localhost:3000/api/signup')
+                    li.col-md-2 Register
+                a(href='http://localhost:3000/api/login')
+                    li.col-md-2 Login
+                a(href="http://localhost:3000/api/logout")
+                    li.col-md-2.col-md-offset-1 Logout
+                a(href='http://localhost:3000/api/myPage')
+                    li.col-md-2 My Page
+        h1(style="padding: 30px 0px 10px 5%; color:midnightblue; font-weight:700") Welcome to askmeanything
+        div(class="home-pages")
+            div(class='home-box' style="background-color: cornsilk")
+                a( href='http://localhost:3000/api/QuestionsPerKW' style="color: black;") Questions per Keyword
+                
+            div(class='home-box' style="background-color: lightcyan")
+                a(href='http://localhost:3000/api/QuestionsPerPeriod' style="color: black;") Questions Per Period
+                
+            div(class='home-box' style="background-color: palegreen")
+                a(href='http://localhost:3000/api/AskQuestion' style="color: black;") Ask new question
+                
+            div(class='home-box' style="background-color: lavender")
+                a( href='http://localhost:3000/api/AnswerQuestion' style="color: black;") Answer a question
+            
+        .div(class='footer')
+            a(href="https://docs.google.com/document/d/1g1SxYip_uSeVmqw1M-FMAOMvfxRus5vT/edit?usp=sharing&ouid=113980108797041909237&rtpof=true&sd=true")  about
+            a(href="mailto:el16155@mail.ntua.gr; el16049@mail.ntua.gr")  contact us
+            a(href="https://docs.google.com/document/d/1xNA4t2Ms4qwfw-UNrHDLNCagWRADmi4r/edit?usp=sharing&ouid=113980108797041909237&rtpof=true&sd=true")  project documentation
+            a(href="https://github.com/razkey23/saas-50")  link on github
+            a(href="https://courses.pclab.ece.ntua.gr/course/view.php?id=34")  course materials
