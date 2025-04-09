@@ -4,8 +4,8 @@
 
 ## 📁 Περιεχόμενα
 
-- robotics1/ robotics class
-- robotics2/ robotics 2 class
+- software engineering class: cli & backend
+- SaaS: MVC, SOA, UML Diagrams
 
 ## 🧠 Περιγραφή
 
